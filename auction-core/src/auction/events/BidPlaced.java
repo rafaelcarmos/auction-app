@@ -2,14 +2,14 @@ package auction.events;
 
 import org.bson.Document;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class BidPlaced extends Event {
     private final UUID bidderId;
     private final double amount;
 
-    public BidPlaced(UUID auctionId, Date timestamp, UUID bidderId, double amount) {
+    public BidPlaced(UUID auctionId, LocalDateTime timestamp, UUID bidderId, double amount) {
         super(auctionId, timestamp);
         this.bidderId = bidderId;
         this.amount = amount;

@@ -2,7 +2,7 @@ package auction.events;
 
 import org.bson.Document;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class AuctionCreated extends Event {
@@ -10,7 +10,7 @@ public class AuctionCreated extends Event {
     private final UUID itemId;
     private final double startPrice;
 
-    public AuctionCreated(UUID auctionId, Date timestamp, UUID auctioneerId, UUID itemId, double startPrice) {
+    public AuctionCreated(UUID auctionId, LocalDateTime timestamp, UUID auctioneerId, UUID itemId, double startPrice) {
         super(auctionId, timestamp);
         this.auctioneerId = auctioneerId;
         this.itemId = itemId;

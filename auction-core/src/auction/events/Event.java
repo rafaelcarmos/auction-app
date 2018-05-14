@@ -2,14 +2,14 @@ package auction.events;
 
 import org.bson.Document;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public abstract class Event {
     private final UUID auctionId;
-    private final Date timestamp;
+    private final LocalDateTime timestamp;
 
-    public Event(UUID auctionId, Date timestamp) {
+    public Event(UUID auctionId, LocalDateTime timestamp) {
         this.auctionId = auctionId;
         this.timestamp = timestamp;
     }
@@ -18,7 +18,7 @@ public abstract class Event {
         return auctionId;
     }
 
-    public final Date getTimestamp() {
+    public final LocalDateTime getTimestamp() {
         return timestamp;
     }
 
@@ -26,7 +26,8 @@ public abstract class Event {
 
     public final Document getDocument() {
         return new Document()
-                .append("auctionId", auctionId)
+                .append("aggregateId", auctionId)
+                .append("aggregateType", "Auction")
                 .append("timestamp", timestamp)
                 .append("eventType", this.getClass().getSimpleName())
                 .append("eventData", getEventDataDocument());

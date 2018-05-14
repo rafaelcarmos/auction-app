@@ -1,6 +1,6 @@
 package auction.commands;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class CreateAuction extends Command {
@@ -8,7 +8,7 @@ public class CreateAuction extends Command {
     private final UUID itemId;
     private final double startPrice;
 
-    public CreateAuction(UUID auctionId, Date timestamp, UUID auctioneerId, UUID itemId, double startPrice) {
+    public CreateAuction(UUID auctionId, LocalDateTime timestamp, UUID auctioneerId, UUID itemId, double startPrice) {
         super(auctionId, timestamp);
         this.auctioneerId = auctioneerId;
         this.itemId = itemId;

@@ -2,11 +2,11 @@ package auction.dispatcher;
 
 import auction.commands.Command;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class CommandBase {
 
-    private Date timestamp;
+    private LocalDateTime timestamp;
     private Command command;
     private String rawMessage;
 
@@ -14,11 +14,11 @@ public class CommandBase {
 
     }
 
-    public Date getTimestamp() {
+    public LocalDateTime getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
     }
 

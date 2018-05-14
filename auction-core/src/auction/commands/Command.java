@@ -1,13 +1,13 @@
 package auction.commands;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public abstract class Command {
     private final UUID auctionId;
-    private final Date timestamp;
+    private final LocalDateTime timestamp;
 
-    public Command(UUID auctionId, Date timestamp) {
+    public Command(UUID auctionId, LocalDateTime timestamp) {
         this.auctionId = auctionId;
         this.timestamp = timestamp;
     }
@@ -16,7 +16,7 @@ public abstract class Command {
         return auctionId;
     }
 
-    public final Date getTimestamp() {
+    public final LocalDateTime getTimestamp() {
         return timestamp;
     }
 }
