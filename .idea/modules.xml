@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/auction-application.iml" filepath="$PROJECT_DIR$/auction-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/auction-core/auction-core.iml" filepath="$PROJECT_DIR$/auction-core/auction-core.iml" />
     </modules>
   </component>
